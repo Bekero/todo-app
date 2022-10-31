@@ -1,0 +1,25 @@
+.todo-preview {
+    background-color: rgb(186, 142, 142);
+
+    .task-container {
+        background-color: rgba(245, 222, 179, 0);
+    }
+
+    .actions{
+        display: flex;
+        >*{
+            padding: 10px;
+            // margin: 10px;
+        }
+    }
+}
+
+.todo-preview.done-task {
+
+
+    .task {
+        text-decoration: line-through;
+    }
+
+    background-color: rgb(130, 201, 130);
+}

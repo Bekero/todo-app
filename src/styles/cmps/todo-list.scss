@@ -1,0 +1,16 @@
+.todo-list-container {
+    max-height: 450px;
+    width: 400px;
+    margin: auto;
+    overflow-y: auto;
+
+    >* {
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.278);
+        height: 50px;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+}

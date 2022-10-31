@@ -1,0 +1,43 @@
+.app-header {
+    background-color: rgba(110, 105, 96, 0);
+    display: grid;
+    height: 10vh;
+
+    .header-container {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+
+        .main-logo-header {
+            color: rgb(203, 158, 165);
+        }
+
+        nav {
+            display: flex;
+            list-style: none;
+            flex-direction: row;
+            gap: 10px;
+
+            a {
+                text-decoration: none;
+                color: rgb(203, 158, 165);
+
+                a:link {
+                    text-decoration: none;
+                }
+
+                a:visited {
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+
+                a:active {
+                    text-decoration: unonenderline;
+                }
+            }
+        }
+    }
+}
