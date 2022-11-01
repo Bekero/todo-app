@@ -1,25 +1,39 @@
 .todo-preview {
-    background-color: rgb(186, 142, 142);
-
-    .task-container {
-        background-color: rgba(245, 222, 179, 0);
-    }
-
-    .actions{
-        display: flex;
-        >*{
-            padding: 10px;
-            // margin: 10px;
-        }
-    }
-}
-
-.todo-preview.done-task {
-
+    background-color: rgba(245, 222, 179, 0);
+    display: flex;
+    cursor: pointer;
 
     .task {
-        text-decoration: line-through;
+        display: flex;
     }
 
-    background-color: rgb(130, 201, 130);
+    &.done-task {
+        opacity: 0.25;
+
+        .task {
+            text-decoration: line-through;
+        }
+    }
+
+    .actions {
+
+        >* {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            // position: relative;
+            width: 40px;
+            height: 40px;
+            background-color: #2c313d;
+            border: none;
+            border-radius: 50%;
+
+            svg {
+                color: #edf2f7;
+                fill: none;
+            }
+        }
+    }
+
 }

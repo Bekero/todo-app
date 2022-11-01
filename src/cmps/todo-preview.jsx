@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useRef } from 'react';
 import TaskDone from './svg/task-done'
 import TaskNotDone from './svg/task-not-done'
+import Trash from './svg/trash'
+import Edit from './svg/edit'
 
 export function TodoPreview({ onMarkTodo, onRemoveTodo, onEditTodo, todo }) {
 
@@ -11,23 +13,13 @@ export function TodoPreview({ onMarkTodo, onRemoveTodo, onEditTodo, todo }) {
         setIsMarked(todo.isDone)
         onMarkTodo(todo)
     }
-    
-    // const removeTodo = (ev, todoId) => {
-    //     onRemoveTodo(ev, todoId)
-    // }
 
     return (
-        <div
-            onClick={checkedTodo}
-            className={todo.isDone ? 'todo-preview done-task flex' : 'todo-preview flex'}
-        >
-            <section className="task-container">
-                {/* <div >{todo.isDone ? <TaskDone /> : <TaskNotDone />}</div> */}
-                <div className="task">{todo.task}</div>
-            </section>
+        <div onClick={checkedTodo} className={todo.isDone ? 'todo-preview done-task flex' : 'todo-preview flex'}>
+            <div className="task">{todo.isDone ? <TaskDone /> : <TaskNotDone />}{todo.task}</div>
             <section className="actions">
-                <div onClick={(ev) => onEditTodo(ev, todo)}>Edit</div>
-                <div onClick={(ev) => onRemoveTodo(ev, todo._id)}>X</div>
+                <button className="edit-action" onClick={(ev) => onEditTodo(ev, todo)}><Edit /></button>
+                <button className="remove-action" onClick={(ev) => onRemoveTodo(ev, todo._id)}><Trash /></button>
             </section>
         </div>
     )

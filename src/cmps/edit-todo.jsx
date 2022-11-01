@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { useForm } from "../hooks/useForm"
 import CloseModal from '../cmps/svg/close'
 

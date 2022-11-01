@@ -9,9 +9,6 @@ export const storageService = {
 function query(entityType, delay = 500) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     return new Promise((resolve, reject) => {
-        // setTimeout(() => {
-        //     resolve(entities)
-        // }, delay)
         resolve(entities)
     })
 }
@@ -32,7 +29,6 @@ async function post(entityType, newEntity) {
 function put(entityType, updatedEntity) {
     return query(entityType)
         .then(entities => {
-            console.log('entities :', entities)
             const idx = entities.findIndex(entity => entity._id === updatedEntity._id)
             entities.splice(idx, 1, updatedEntity)
             _save(entityType, entities)

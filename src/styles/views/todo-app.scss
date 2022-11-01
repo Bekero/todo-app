@@ -1,5 +1,6 @@
 .main-app-container {
     margin-top: 15px;
+
     // background-color: $main-bgc;
     .todo-edit-modal {
         position: fixed;
@@ -86,24 +87,37 @@
 
     }
 
-    .fire-wall {
-        pointer-events: none;
-    }
 
     .todo-submit {
         display: flex;
-        text-align: center;
-        margin: auto;
-        width: 400px;
+        margin-bottom: 25px;
         justify-content: center;
-
+        ::placeholder {
+            color: #fff;
+        }
+        :first-child {
+            background-color: rgba(255, 255, 255, 0.402);
+            width: 270px;
+        }
+        :last-child {
+            width: 120px;
+        }
         >* {
             border: 0;
-            height: 30px;
+            height: 46px;
             margin: 2px;
             border-radius: 8px;
         }
 
     }
 
+}
+
+.main-app-container.fire-wall {
+    pointer-events: none;
+    background-color: rgba(255, 0, 0, 0.274);
+
+    .todo-edit-modal {
+        pointer-events: all;
+    }
 }

@@ -1,17 +1,14 @@
 
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
-import { useForm } from "../hooks/useForm"
 import { todoService } from '../services/todo.service'
 import { loadTodos, addNewTodo, markDone, removeTodo, editTodo, updateTodo } from '../store/todo.actions'
 import { TodoList } from "../cmps/todo-list"
 import { TodoEdit } from "../cmps/edit-todo"
-import { useNavigate } from "react-router-dom"
 
 export const TodoApp = () => {
 
     const dispatch = useDispatch()
-    const navigate = useNavigate()
 
     let [wantedTask, setWantedTask] = useState('')
     let [editModal, setEditModal] = useState(false)
@@ -57,7 +54,7 @@ export const TodoApp = () => {
     }
 
     return (
-        <div className="main-app-container">
+        <div className={editModal ? 'main-app-container fire-wall' : 'main-app-container'}>
             {editModal && <TodoEdit
                 onCloseTodo={onCloseTodo}
                 onSaveTodo={onSaveTodo}
@@ -66,16 +63,18 @@ export const TodoApp = () => {
             <form className="todo-submit" onSubmit={addTodo}>
                 <input
                     type="text"
+                    placeholder="Enter Todo.."
                     value={wantedTask}
                     onChange={ev => setWantedTask(ev.target.value)}
                 />
-                <button type="submit">Add Todo</button>
+                <button className="button-31" type="submit">Add Todo</button>
             </form>
-            <div className={editModal ? 'fire-wall' : ''}>
+            <div>
                 <TodoList
                     onMarkTodo={onMarkTodo}
                     onRemoveTodo={onRemoveTodo}
-                    onEditTodo={onEditTodo} />
+                    onEditTodo={onEditTodo}
+                />
             </div>
         </div>
     )

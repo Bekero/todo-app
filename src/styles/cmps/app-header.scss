@@ -4,12 +4,16 @@
     height: 10vh;
 
     .header-container {
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         display: flex;
 
         .main-logo-header {
-            color: rgb(203, 158, 165);
+            font-family:Cursive;
+            font-size: 32px;
+            background: -webkit-linear-gradient(rgb(194, 180, 180), rgb(110, 105, 105));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav {
@@ -35,7 +39,7 @@
                 }
 
                 a:active {
-                    text-decoration: unonenderline;
+                    text-decoration: underline;
                 }
             }
         }
