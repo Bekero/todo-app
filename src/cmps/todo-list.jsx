@@ -6,7 +6,7 @@ export function TodoList({ onMarkTodo, onRemoveTodo, onEditTodo }) {
 
     let todos = useSelector(state => state.todoModule.todos)
 
-    if (!todos) return <div>No Todos..</div>
+    if (!todos) return 
     return (
         <div className="todo-list-container">
             {todos?.map(todo => {

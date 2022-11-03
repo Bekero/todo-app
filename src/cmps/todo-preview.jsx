@@ -16,7 +16,7 @@ export function TodoPreview({ onMarkTodo, onRemoveTodo, onEditTodo, todo }) {
 
     return (
         <div onClick={checkedTodo} className={todo.isDone ? 'todo-preview done-task flex' : 'todo-preview flex'}>
-            <div className="task">{todo.isDone ? <TaskDone /> : <TaskNotDone />}{todo.task}</div>
+            <div className="task">{todo.isDone ? <TaskDone /> : <TaskNotDone />}<p>{todo.task}</p></div>
             <section className="actions">
                 <button className="edit-action" onClick={(ev) => onEditTodo(ev, todo)}><Edit /></button>
                 <button className="remove-action" onClick={(ev) => onRemoveTodo(ev, todo._id)}><Trash /></button>

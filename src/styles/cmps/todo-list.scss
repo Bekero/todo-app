@@ -1,22 +1,83 @@
 .todo-list-container {
     max-height: 600px;
-    width: 500px;
+    width: 250px;
     border: 3px solid #edf2f775;
     border-radius: 8px;
-    padding: 0 20px;
     margin: auto;
     overflow-y: auto;
 
     :last-child {
         border: none;
-        margin: 3px;
     }
-    
+
     >* {
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid $main-clr;
-        height: 70px;
         margin: 0 7px 0 7px;
+    }
+}
+
+@media(max-width: 250px) {
+    .todo-list-container {
+        width: 200px;
+    }
+
+}
+
+@media (min-width: 250px) {
+    .todo-list-container {
+        width: 240px;
+
+        p {
+            width: 100px;
+        }
+    }
+
+    .actions {
+        margin: 0;
+    }
+}
+
+@media (min-width: 350px) {
+    .todo-list-container {
+        width: 300px;
+
+        p {
+            width: 100px;
+        }
+    }
+
+    .actions {
+        margin: 0;
+    }
+}
+
+@media (min-width: 500px) {
+    .todo-list-container {
+        width: 430px;
+        padding: 0 20px;
+
+        :last-child {
+            margin: 3px;
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .todo-list-container {
+        width: 480px;
+    }
+}
+
+@media (min-width: 800px) {
+    .todo-list-container {
+        width: 550px;
+    }
+}
+
+@media (min-width: 1020px) {
+    .todo-list-container {
+        width: 620px;
     }
 }

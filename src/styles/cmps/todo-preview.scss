@@ -5,6 +5,10 @@
 
     .task {
         display: flex;
+        align-items: center;
+        p {
+            overflow-wrap: break-word;
+        }
     }
 
     &.done-task {
@@ -22,7 +26,6 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            // position: relative;
             width: 40px;
             height: 40px;
             background-color: #2c313d;
@@ -36,4 +39,62 @@
         }
     }
 
+}
+
+@media (max-width: 250px) {
+    .todo-preview {
+        .task {
+            p {
+                width: 60px;
+            }
+        }
+    }
+}
+
+@media (min-width: 250px) {
+    .todo-preview {
+        .task {
+            p {
+                width: 60px;
+            }
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .todo-preview {
+        .task {
+            p {
+                width: 150px;
+            }
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .todo-preview {
+
+        .task {
+            p {
+                width: 250px;
+            }
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .todo-preview {
+
+        .task {
+            p {
+                width: 350px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1020px) {
+    .task {
+        width: 450px;
+    }
 }

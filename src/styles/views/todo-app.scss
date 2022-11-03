@@ -1,7 +1,9 @@
 .main-app-container {
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    // background-color: $main-bgc;
     .todo-edit-modal {
         position: fixed;
         background-color: rgba(47, 93, 157, 0.739);
@@ -87,37 +89,89 @@
 
     }
 
-
     .todo-submit {
         display: flex;
         margin-bottom: 25px;
         justify-content: center;
+        align-items: center;
+
         ::placeholder {
             color: #fff;
         }
+
         :first-child {
             background-color: rgba(255, 255, 255, 0.402);
-            width: 270px;
         }
-        :last-child {
-            width: 120px;
-        }
+
         >* {
             border: 0;
             height: 46px;
             margin: 2px;
             border-radius: 8px;
         }
-
     }
-
 }
 
 .main-app-container.fire-wall {
     pointer-events: none;
-    background-color: rgba(255, 0, 0, 0.274);
 
     .todo-edit-modal {
         pointer-events: all;
     }
 }
+
+@media(max-width: 250px) {
+    .todo-submit {
+        flex-direction: column;
+
+        :first-child {
+            background-color: rgba(255, 255, 255, 0.402);
+            width: 160px;
+        }
+
+        :last-child {
+            width: 120px;
+        }
+
+    }
+}
+
+@media (min-width: 250px) {
+    .todo-submit {
+        flex-direction: column;
+
+        :first-child {
+            width: 220px;
+        }
+
+        :last-child {
+            width: 120px;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .todo-submit {
+        flex-direction: row;
+
+        :first-child {
+            width: 260px;
+        }
+
+        :last-child {
+            width: 120px;
+        }
+    }
+}
+
+// @media (min-width: 700px) {
+
+// }
+
+// @media (min-width: 800px) {
+
+// }
+
+// @media (min-width: 1020px) {
+
+// }
